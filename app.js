@@ -64,14 +64,29 @@ fetch(api)
 
     // getCity('Durban');
     // getCity('Joburg');
+    let citybox = document.getElementsByClassName('citybox');
+    let cityBoxCount = citybox.length;
+   if(cityBoxCount === 0){
     cityContainer.appendChild(city);
     cityContainer.appendChild(temp);
     cityContainer.appendChild(windSpeed);
     cityContainer.appendChild(desc);
     cityContainer.appendChild(icon);
     content.appendChild(cityContainer);
+   } else {
+    content.removeChild(cityContainer);
+
+   }
+   
+        
+    // }
+    console.log(citybox);
+    
+    
 
     // Loop through the Displaying content
+    
+    console.log(citybox.length);
   });
 };
 
