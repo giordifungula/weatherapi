@@ -18,8 +18,15 @@ fetch(api)
     let cityContainer = document.createElement('div');
     cityContainer.setAttribute('class', 'citybox');
 
-    let city = document.createElement('h1');
-    city.setAttribute('class', 'head');
+    let durbanContainer = document.createElement('div');
+    durbanContainer.setAttribute('class', 'citybox');
+
+
+    let capeTown = document.createElement('h1');
+    capeTown.setAttribute('class', 'head');
+
+    let durban = document.createElement('h1');
+    durban.setAttribute('class', 'head');
 
     let icon = document.createElement('img');
 
@@ -37,11 +44,17 @@ fetch(api)
     let getDescp = data.weather[0].description;
     console.log(getDescp);
     // Create Citys and assign them
-    let capeTown = city.textContent = 'Cape Town';
+    // let capeTown = city.textContent = 'Cape Town';
+    // let durban = city.textContent = 'Durban';
     let capeTownTemp = temp.textContent += getTemp + '° C' ;
     let capeTownWind = windSpeed.textContent += getWind + ' KM/h';
     let capeTownDescp = desc.textContent += getDescp;
-    console.log(capeTownDescp);
+
+    // Durban Content
+    let durbanTemp = temp.textContent += getTemp + '° C' ;
+    let dubanWind = windSpeed.textContent += getWind + ' KM/h';
+    let durbanDesp = desc.textContent += getDescp;
+    // console.log(capeTownDescp);
 
     let iconLocation = data.weather[0].icon
     
@@ -49,12 +62,20 @@ fetch(api)
     icon.src = `http://openweathermap.org/img/w/${iconLocation}.png`;
     console.log(iconLocation);
     capeTown.textContent = 'Cape Town';
+    durban.textContent = 'Durban';
 
-    cityContainer.appendChild(city);
+    cityContainer.appendChild(capeTown);
+    durbanContainer.appendChild(durban);
+    durbanContainer.appendChild(temp);
+    durbanContainer.appendChild(windSpeed);
+    durbanContainer.appendChild(icon)
+
     cityContainer.appendChild(temp);
     cityContainer.appendChild(windSpeed);
     cityContainer.appendChild(desc);
     cityContainer.appendChild(icon);
+
     content.appendChild(cityContainer);
+    content.appendChild(durbanContainer);
   });
 
