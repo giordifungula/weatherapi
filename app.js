@@ -19,22 +19,31 @@ fetch(api)
     cityContainer.setAttribute('class', 'citybox');
 
     let city = document.createElement('h1');
+    city.setAttribute('class', 'head');
 
     let icon = document.createElement('img');
 
     let temp = document.createElement('h3');
-    temp.textContent = 'Temperature';
+    temp.textContent = 'Temperature ';
 
     let windSpeed = document.createElement('h4');
-    windSpeed.textContent = 'Wind Speed';
+    windSpeed.textContent = 'Wind Speed ';
 
     let desc = document.createElement('h5');
-    desc.textContent = 'Description';
+    desc.textContent = 'Description: ';
 
+    let getTemp = data.main.temp;
+    let getWind = data.wind.speed;
+    let getDescp = data.weather[0].description;
+    console.log(getDescp);
     // Create Citys and assign them
     let capeTown = city.textContent = 'Cape Town';
+    let capeTownTemp = temp.textContent += getTemp + '° C' ;
+    let capeTownWind = windSpeed.textContent += getWind + ' KM/h';
+    let capeTownDescp = desc.textContent += getDescp;
+    console.log(capeTownDescp);
 
-    let iconLocation = data.weather[0].icon;
+    let iconLocation = data.weather[0].icon
     
 
     icon.src = `http://openweathermap.org/img/w/${iconLocation}.png`;
