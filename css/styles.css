@@ -1,0 +1,21 @@
+html {
+
+}
+
+body {
+    background: hsl(171, 100%, 41%);
+}
+
+.citybox {
+    background: rgb(163, 140, 140);
+    padding: 20px;
+    color: #eee;
+    text-align: center;
+    max-width: 500px;
+    border: 1px solid transparent;
+    border-radius: 28px;
+}
+
+.head{
+    font-size: 2em;
+}
